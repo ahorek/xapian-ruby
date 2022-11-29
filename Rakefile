@@ -28,7 +28,7 @@ task :default do
 
 	Dir.chdir core do
 		system! 'sed -i".bak" -e "s/darwin\\[91\\]/darwin[912]/g" configure'
-		system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix}"
+		system! "./configure --prefix=#{prefix} --exec-prefix=#{prefix} --enable-64bit-docid"
 		system! "make clean all"
 		system! "cp -r .libs/* ../lib/"
 	end
